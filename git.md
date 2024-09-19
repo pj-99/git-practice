@@ -66,7 +66,7 @@ hello
 - `-p`: pretty print the content
 
 
-`git hash-object` 也可以直接讀某個檔案的內容：
+另外 `git hash-object` （在不指定 `--stdin` 時）可以計算檔案的**內容**並產生 SHA-1 key：
 ```shell
 > echo 'hello v1' > test.txt
 > git hash-object -w test.txt
