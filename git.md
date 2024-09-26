@@ -8,7 +8,7 @@
 
 Git 以版本控制為主要功能， 而它的內部是基於 key-value data store，你可以將任何 value 存進這個 data store 中，並得到一個用來取出它的 key，透過這個 data store，就能存取各種檔案的 snapshot。除了這個 data store 外，git 也儲存了方便管理 key 的資訊（例如 branch, head 等等）。
 - 每個 repo 中的 git 相關的資訊被存在 `.git` 資料中。
-- 用 `git init` 後，repo 內就會創建 `.git` 資料夾，裡面儲存了所有這個 repo 中 git 需要的資料。
+- 用 `git init` 後，repo 內就會建立 `.git` 資料夾，裡面儲存了所有這個 repo 中 git 需要的資料。
 - 在 `.git` 資料夾中：
 	- `objects` 負責儲存 git objects: blob, tree, commit
 	- `refs` 負責儲存 references: branch, head, tag
@@ -18,7 +18,7 @@ Git 以版本控制為主要功能， 而它的內部是基於 key-value data st
 
 git 提供了一些底層指令讓使用者能直接操作較底層的功能。`git hash-object` 能依照輸入資料（value）產生對應的 unique key，並將資料儲存到 `.git/objects` 目錄中，之後就能用 key 取資料。 **blob 就是最基本儲存物件類型，就是個值（例如一個檔案的內容）。**
 
-在用 `git init` 創建 repo 後，一開始 `.git/objects` 內只有 info 和 pack 資料夾。
+在用 `git init` 建立 repo 後，一開始 `.git/objects` 內只有 info 和 pack 資料夾。
 ```shell
 > tree .git/objects
 .git/objects
@@ -142,9 +142,9 @@ $ git cat-file -p master^{tree}
 040000 tree 99f1a6d12cb4b6f19c8655fca46c3ecf317074e0      lib
 ```
 
-#### 創建 tree
+#### 建立 tree
 
-git 能將你的 staging area (index) 創成一個 tree。為了手動創建一個 tree，要先讓 staging area 有東西。
+git 能將你的 staging area (index) 創成一個 tree。為了手動建立一個 tree，要先讓 staging area 有東西。
 
 `git update-index` 可以將檔案內容註冊到 index (staging area) 中。
 
@@ -205,8 +205,8 @@ dbb963c9308e5f11a30f661f22476e0ab41a0817
 
 ### commit
 現在 git 可以記住檔案內容、檔名、多個檔案了，但這些 SHA-1 key 怎麼管理，每次都要自己記下來？因此就需要 commit。commit 也是一個 git object，它儲存了對應的 tree 和訊息、時間、作者等等資訊。
-#### 創建 commit tree
-用第一個創建的 tree 創個 commit tree：
+#### 建立 commit tree
+用第一個建立的 tree 創個 commit tree：
 ```shell
 > echo 'First commit' | git commit-tree 6a48d63e943686e85ea53e723d0777891369db15
 4f2c2899185b2f29c111b5a1fa1ab99fe3b54613
@@ -219,7 +219,7 @@ committer pj <Pinjiang1220@gmail.com> 1726329289 +0800
 First commit
 ```
 
-依序照剛剛之前 tree 創建的順序，建立對應的 commit，並以 `-p` 指定該 commit 的 parent
+依序照剛剛之前 tree 建立的順序，建立對應的 commit，並以 `-p` 指定該 commit 的 parent
 ```shell
 > echo 'Second commit' | git commit-tree dbb963 -p 4f2c28
 bc6aae4a51a38564a37b8421c76ddfc81b9dcb51
