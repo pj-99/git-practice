@@ -55,7 +55,7 @@ ce013625030ba8dba906f756967f9e9ca394464a
 在 `objects` 目錄中，每一個被儲存的東西都存在一個檔案中。檔案的目錄是 key 的前兩碼，檔案名則用剩下的部分。
 
 ps. 好奇看一下這個檔案的內容，會看到一串亂碼：
-> ![](attachment/cat_object.png)
+> ![](attachment/week-01/cat_object.png)
 （因為內容是壓縮過的）
 
 使用用來觀察 git object 的 `git cat-file` 去看檔案：
@@ -157,7 +157,7 @@ git update-index --add --cacheinfo 100644 d21fe316a0e9578aea75decc8c60e2a8995347
 
 於是 staging 中出現了第一版 test.txt：
 
-![](attachment/staged.png)
+![](attachment/week-01/staged.png)
 
 
 再來就能將 staging area 以 tree 存起來：
@@ -232,7 +232,7 @@ bc6aae4a51a38564a37b8421c76ddfc81b9dcb51
 git log --stat 893046925efff5afa8b24d8d884a9bdd12ed2e08
 ```
 
- <img src="attachment/commits.png" width="400">
+ <img src="attachment/week-01/commits.png" width="400">
 
 要注意的是，`git commit-tree`和平常 `git commit` 是不一樣的，`git commit` 是**在目前的 branch 上**做新的 commit，而這裡的 `git commit-tree` 是做一個 commit object，並沒有關於 branch 的資訊。
 
