@@ -10,7 +10,7 @@ WIP
 - [x] C. 建立 Express 專案與回答問題: [backend/README.md](../backend/README.md)
   - [ ] [進階題][localhost](http://localhost) 是什麼？
   - [ ] [進階題]`curl` 是什麼？查查看怎麼用 curl 來測試網路連線？常用參數有哪些？
-- [ ] D. 分組
+- [x] D. 分組: [group.md](./group.md)
 
 ---
 
