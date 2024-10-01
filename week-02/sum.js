@@ -1,3 +1,12 @@
+// Summary:
+// reduce() 可以將 array reduce 成 single value
+// 因此它很適合做「需要看過所有元素，但最後只需要一個值」
+// 相較於其他常見的 array function:
+// - foreach(): 每個元素都要做某件事情
+// 		- 如果用來算總和，還需要額外宣告變數，不像 reduce() 會直接回傳值
+// - map(): 將每個元素做變化並回傳一個新的 array
+//		- 如果用來算總和，不會用到回傳的 array
+
 // Use reduce to reduce an array into a value
 function sum(ary) {
 	//  Specify an initial value of 0 for empty array cases
