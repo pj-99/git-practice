@@ -15,11 +15,17 @@ export default class Stack {
   }
 
   // 移除並回傳 stack 頂部的元素
+  /**
+   * Remove the top element, if stack is empty, return undefined
+   */
   pop() {
     return this.#items.pop();
   }
 
   // 回傳 stack 頂部的元素，但不移除它
+  /**
+   * Return the top element, if stack is empty, return undefined
+   */
   peek() {
     return this.#items.at(-1);
   }
