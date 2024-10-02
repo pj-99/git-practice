@@ -2,8 +2,6 @@
 
 ## HW checklist
 
-WIP
-
 - [x] A. 註冊 AWS 帳號與回答問題: [README.md](README.md)
 - [x] B. Callback 練習: [callback.js](callback.js)
   - [x] [進階] 怎麼用 Promise 來改善？: [promise.js](promise.js)
